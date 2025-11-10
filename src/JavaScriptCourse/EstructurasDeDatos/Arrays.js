@@ -17,7 +17,7 @@ luchadores.push("Penta 0M")
 console.log(luchadores.join("\n"))
 
 //Acceder a un elemento por id
-console.log("Acceder a un eleento por ID")
+console.log("Acceder a un elemento por ID")
 console.log(luchadores[0])
 
 //------------------------------------
@@ -29,3 +29,7 @@ console.log(luchadores.shift())
 
 console.log("Nuevo array")
 console.log(luchadores)
+
+for(let elem of luchadores){
+    console.log(elem)
+}
