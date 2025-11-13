@@ -19,7 +19,7 @@ class Empleado{
         Telefono: ${this.telefono}`);
     }
 }
-//----------------------------------Clase hija---------------------------------------------------------
+//----------------------------------Clase hija 1---------------------------------------------------------
 class Obrero extends Empleado{
     constructor(id, nombre, sueldo, correo, telefono, ocupacion, maquinas){
         super(id, nombre, sueldo, correo, telefono);
@@ -85,29 +85,21 @@ guardar(inge1);
 let inge2 = new Supervisor("2I", "UnderTaker", "6000.50","under@gmail.com", "7134569874","Industrial")
 guardar(inge2);
 let inge3 = new Supervisor("3I", "Brock Lesnar", "5000.50","brock@gmail.com", "7223216549","Mecanico")
-guardar(inge2);
-//----------------------------------------------------------------------------------------------------------------------------------------
-ob1.nuwvoMetodo = function (){
-    console.log(`Hola mi nombre es: ${this.nombre}`)
-}
-
-inge1.saludo = () =>{
-    console.log(`Hola mi nombre es arrow: ${this.nombre}`)
-}
-//Agregar nuevo metodo a la instancia
-ob1.nuwvoMetodo()
-inge1.saludo()
+guardar(inge3);
+//----------------------------------Agregar metodos con prototype a la clase padre--------------------------------------------------
 
 Empleado.prototype.esSupervisor = function (){
+    /*
     if(this.sueldo < 2400){
         console.log(`Personal de mantenimiento - ${this.nombre}`)
     }
     else if(this.sueldo > 2400 && this.sueldo <= 7000){
         console.log(`Supervisor - ${this.nombre}`)
     }
+    */
+
 }
 
-//----------------------------------Agregar metodos con prototype a la clase padre--------------------------------------------------
 Empleado.prototype.jornada = () =>{
     console.log("Jornada completa")
 }
@@ -115,19 +107,21 @@ Empleado.prototype.jornada = () =>{
 Empleado.prototype.turno = function (){
     console.log("Mixto")
 }
-/*
-console.log(ob1.jornada());
-console.log(ob1.turno());
-console.log(Array.from(todos.values()))
-console.log(ob1.esSupervisor())
-console.log(inge2.esSupervisor())
-console.log(ob2.esSupervisor()) */
-//--------------------------------Mostrar------------------------------------------------
+
 function mostrarSupervisores(){
-    for(let i = 0; i <= supervicion.length; i++){
-        console.log("Supervisor: " + i + " "+ supervicion[i])
-    }
+    console.log("Solicitando información...")
+    setTimeout(function (){
+        console.log("Supervisores registrados en el sistema:")
+        setTimeout(function (){
+            for(let i = 0; i < supervicion.length; i++){
+                console.log("Supervisor: " + (i + 1) + " "+ supervicion[i])
+            }
+        },1500)
+    },1500)
+
 }
+
+//---------------------------------------------------------------------------------------
 console.log("Comprobando metodos")
 mostrarSupervisores()
 
