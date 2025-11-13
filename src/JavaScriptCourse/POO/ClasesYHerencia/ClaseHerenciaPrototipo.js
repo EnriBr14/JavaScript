@@ -89,14 +89,14 @@ guardar(inge3);
 //----------------------------------Agregar metodos con prototype a la clase padre--------------------------------------------------
 
 Empleado.prototype.esSupervisor = function (){
-    /*
+
     if(this.sueldo < 2400){
         console.log(`Personal de mantenimiento - ${this.nombre}`)
     }
     else if(this.sueldo > 2400 && this.sueldo <= 7000){
         console.log(`Supervisor - ${this.nombre}`)
     }
-    */
+
 
 }
 
