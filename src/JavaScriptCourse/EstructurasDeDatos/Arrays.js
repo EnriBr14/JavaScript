@@ -14,6 +14,7 @@ luchadores.push("El Santo")
 luchadores.push("Mil Mascaras")
 luchadores.push("Penta 0M")
 
+console.log("Metodos en arrays")
 console.log(luchadores.join("\n"))
 
 //Acceder a un elemento por id
