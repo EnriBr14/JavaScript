@@ -117,7 +117,7 @@ function mostrarLuchPAre(id){
 
 }
 
-mostrarLuchPAre(1)
+mostrarLuchPAre(2)
 
 
 
