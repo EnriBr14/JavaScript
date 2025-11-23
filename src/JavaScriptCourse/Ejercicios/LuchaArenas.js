@@ -11,16 +11,50 @@ function guardar(objeto){
     //Guarda arenas de lucha
     if(Object.keys(objeto).length === 3){
         //Verificar que no exista la arena
-        for(let a = 0; a < empresas.length; a++){
-            if (empresas[a].empresaName === objeto.empresaName){
-                console.log("Usuario registrado...")
+        //some(condicion a cumplir) valida que se cumpla al menos una condicion en un array
+        let validacionExistencia = empresas.some(empres => empres.empresaName === objeto.empresaName)
+            if (validacionExistencia){
+                setTimeout(() => {
+                    console.log("La empresa que esta intentado registrar ya existe y es: " + objeto.empresaName);
+                }, 1500)
             }else{
                 empresas.push(objeto)
             }
-        }
 
+//Agregar luchadores
     }else if(Object.keys(objeto).length > 3){
-        luchadores.push(objeto)
+        //Verificar la existencia de los luchadores
+        let validacionLuchador = luchadores.some(lucha => lucha.nombre === objeto.nombre)
+        if (validacionLuchador){
+            setTimeout(() => {
+                console.log("Luchador registrado: " + objeto.nombre)
+            },1500)
+        }else{
+            luchadores.push(objeto)
+        }
+    }
+}
+//-------------------------Eliminar----------------------------------------------------------------------------------
+function eliminar(objeto){
+    //Eliminar una arena
+    if(Object.keys(objeto).length === 3){
+        for(let i = 0; i < empresas.length; i++){
+            //Recorrer el array------------------------------------------------------------------
+            if(empresas[i].empresaName === objeto.empresaName){
+                empresas.splice(i,1)
+                console.log("Eliminado con exito")
+            }else{
+                console.log("No")
+            }
+
+
+        }
+    }
+
+
+    //Eliminar un luchador
+    else if(Object.keys(objeto).length > 3){
+
     }
 }
 
@@ -59,6 +93,8 @@ const l9 = new Luchador(9, "Mil Mascaras", true, "AAA", "Mexico");
 guardar(l9)
 const l10 = new Luchador(10, "Mr Iguana", true, "AAA", "Mexico");
 guardar(l10)
+const l11 = new Luchador(11, "Mr Iguana", true, "AAA", "Mexico");
+guardar(l11)
 //-----------------------------------------Arenas--------------------------------------------------------------------
 class Empresa{
     constructor(idEmpres, empresaName, paisE){
@@ -79,13 +115,12 @@ const e3 = new Empresa(3 ,"WWE", "EU")
 guardar(e3)
 const e4 = new Empresa(4 ,"NXT", "EU")
 guardar(e4)
-/*
+
 const e5 = new Empresa(5,"NXT", "EU")
 guardar(e5)
-*/
-//------------------------------------------
 
-empresas.forEach(empresa => {
-    console.log(empresa.nombre)
+//------------------------------------------
+eliminar(e4)
+empresas.forEach(empe => {
+    console.log(empe)
 })
-console.log(empresas[1].empresaName)
