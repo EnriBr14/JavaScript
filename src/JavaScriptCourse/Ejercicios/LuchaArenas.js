@@ -1,6 +1,7 @@
 //Guardar luchadores en un array y validar que no existan
-//Guardar arenas en un array
+//Guardar arenas en un 
 //Mostrar valores por empresa
+/"
 
 let empresas = []
 let luchadores = []
