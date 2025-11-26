@@ -4,7 +4,7 @@
 
 let empresas = []
 let luchadores = []
-//--------------------------Funcion para programar------------------------------------------------------------------
+//--------------------------------------------Funciones------------------------------------------------------------
 //Verificar que el luchador o arena no esten registrados
 function guardar(objeto){
 
@@ -38,23 +38,37 @@ function guardar(objeto){
 function eliminar(objeto){
     //Eliminar una arena
     if(Object.keys(objeto).length === 3){
+
         for(let i = 0; i < empresas.length; i++){
             //Recorrer el array------------------------------------------------------------------
             if(empresas[i].empresaName === objeto.empresaName){
                 empresas.splice(i,1)
                 console.log("Eliminado con exito")
             }else{
-                console.log("No")
+                console.log("No se elimino, funcion eliminar ")
+
             }
 
 
         }
     }
-
+//-------------------------------Mostrar que luchadores por empresas--------------------------------------------
+        //Ligar valores por medio de empresas
 
     //Eliminar un luchador
     else if(Object.keys(objeto).length > 3){
+        for(let i = 0; i < luchadores.length; i++){
+            //Recorrer el array------------------------------------------------------------------
+            if(luchadores[i].nombre === objeto.nombre){
+                luchadores.splice(i,1)
+                console.log("Luchador eliminado con exito")
+            }else{
+                console.log("No se elimino ningun luchador")
 
+            }
+
+
+        }
     }
 }
 
@@ -93,8 +107,7 @@ const l9 = new Luchador(9, "Mil Mascaras", true, "AAA", "Mexico");
 guardar(l9)
 const l10 = new Luchador(10, "Mr Iguana", true, "AAA", "Mexico");
 guardar(l10)
-const l11 = new Luchador(11, "Mr Iguana", true, "AAA", "Mexico");
-guardar(l11)
+
 //-----------------------------------------Arenas--------------------------------------------------------------------
 class Empresa{
     constructor(idEmpres, empresaName, paisE){
@@ -115,12 +128,17 @@ const e3 = new Empresa(3 ,"WWE", "EU")
 guardar(e3)
 const e4 = new Empresa(4 ,"NXT", "EU")
 guardar(e4)
-
+//--------------------------------------Pruebas-----------------------------------------------
+//const l11 = new Luchador(11, "Mr Iguana", true, "AAA", "Mexico");
+//guardar(l11)
+/*
 const e5 = new Empresa(5,"NXT", "EU")
 guardar(e5)
+*/
 
-//------------------------------------------
-eliminar(e4)
-empresas.forEach(empe => {
-    console.log(empe)
-})
+eliminar(e2)
+eliminar(l1)
+
+for(luchador of luchadores){
+    console.log(luchador.nombre)
+}
