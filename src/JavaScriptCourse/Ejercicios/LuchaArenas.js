@@ -52,8 +52,6 @@ function eliminar(objeto){
 
         }
     }
-//-------------------------------Mostrar que luchadores por empresas--------------------------------------------
-        //Ligar valores por medio de empresas
 
     //Eliminar un luchador
     else if(Object.keys(objeto).length > 3){
@@ -62,12 +60,30 @@ function eliminar(objeto){
             if(luchadores[i].nombre === objeto.nombre){
                 luchadores.splice(i,1)
                 console.log("Luchador eliminado con exito")
+
             }else{
                 console.log("No se elimino ningun luchador")
 
             }
 
 
+        }
+    }
+}
+//-------------------------------Mostrar que luchadores por empresas------------------------------------------------
+function luchXempresa(empresaO){
+    //Verificar el valor de la empresa y luchador
+    for(let i = 0; i < empresas.length; i++){
+        if(empresaO === empresas[i].empresaName){
+            console.log("Empresa encontrada")
+            luchadores.forEach(luchad => {
+                if(luchad.empresa === empresas[i].empresaName){
+                    console.log(`Empresa: ${empresaO}
+                    luchadores: ${luchad.nombre}`);
+                }
+            })
+        }else{
+            console.log("Nombre de la empresa no encontrado")
         }
     }
 }
@@ -136,9 +152,6 @@ const e5 = new Empresa(5,"NXT", "EU")
 guardar(e5)
 */
 
-eliminar(e2)
-eliminar(l1)
-
-for(luchador of luchadores){
-    console.log(luchador.nombre)
-}
+//eliminar(e2)
+//eliminar(l1)
+luchXempresa("AAA")
