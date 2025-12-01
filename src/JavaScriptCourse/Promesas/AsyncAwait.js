@@ -20,4 +20,23 @@ async function datafech(){
         console.log(err)
     }
 }
-datafech();
+
+
+//Multiples peticiones
+const urls = ["https://rickandmortyapi.com/api/character",
+    "https://rickandmortyapi.com/api/location",
+    "https://rickandmortyapi.com/api/episode"
+]
+
+async function MiltiplePeticiones(){
+    try{
+        for await (let url of urls){
+            let respuestas = await fetch(url)
+            let datos = await respuestas.json()
+            console.log(datos)
+        }
+    }catch(err){
+        console.log(err)
+    }
+}
+MiltiplePeticiones()
