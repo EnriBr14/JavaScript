@@ -28,24 +28,26 @@ async function fetchPost() {
 
     const res = respueta;
     for (const post of res) {
-        const postContainer = document.createElement("article");
-        postContainer.id = post.id;
-        postContainer.classList.add("post-item");
+       setTimeout(()=>{
+           const postContainer = document.createElement("article");
+           postContainer.id = post.id;
+           postContainer.classList.add("post-item");
 
-        const title = document.createElement("h2");
-        title.textContent = post.title;
+           const title = document.createElement("h2");
+           title.textContent = post.title;
 
-        const body = document.createElement("p");
-        body.textContent = post.body;
+           const body = document.createElement("p");
+           body.textContent = post.body;
 
-        const button = document.createElement("button");
-        button.textContent = "DELETE Content";
+           const button = document.createElement("button");
+           button.textContent = "DELETE Content";
 
-        postContainer.append(title);
-        postContainer.append(body);
-        postContainer.append(button);
+           postContainer.append(title);
+           postContainer.append(body);
+           postContainer.append(button);
 
-        listElement.append(postContainer);
+           listElement.append(postContainer);
+       },1500)
     }
 }
 
