@@ -17,7 +17,7 @@ catch(): imprime el error de lo que no se resolvio
 */
 const promesas = new Promise((resolve,reject)=>{
     setTimeout(()=> {
-        let operacion1 = true;
+        let operacion1 = false;
         if(operacion1){
             console.log("Promesa resuelta");
             resolve("Resuelta");
