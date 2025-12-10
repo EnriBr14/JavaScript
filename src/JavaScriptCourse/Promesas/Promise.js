@@ -1,14 +1,13 @@
 //Promesas
 const promesa = new Promise((resolve, reject) => {
     setTimeout(() => {
-        let valor = false;
+        let valor = true;
         if(valor){
             resolve("La promesa se resolvioo bro");
 
         }else{
 
             reject("La promesa no se resolvio");
-
         }
     })
 })

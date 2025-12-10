@@ -11,13 +11,8 @@ const fetchButton = document.querySelector("#available-posts button");
 const postList = document.querySelector("#posts-container");
 
 function EviarHTTPRespuesta(metodo, url, datoAEnviar){
-    return fetch(url,{
-        method: metodo,
-        body: JSON.stringify(datoAEnviar),
-        headers: {
-            "Content-Type": "application/json"
-        }
-    }).then((response) => {
+    return fetch(url,{method: metodo, body: JSON.stringify(datoAEnviar), headers: {"Content-Type": "application/json"}})
+        .then((response) => {
         return response.json();
     })
 }

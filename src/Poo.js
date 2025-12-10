@@ -111,9 +111,56 @@ const jorge = {
 
 }
 */
-class RutasApredizaje{
+class cursoo {
+    constructor({nombreCurso, listaClases = []}) {
+        this._nombreCurso = nombreCurso
+        this.listaClases = listaClases
+    }
 
+    get nombreCurso(){
+        return this._nombreCurso
+    }
+
+    set nombreCurso(nuevoNombre){
+    if(nuevoNombre === "Curso malisioso"){
+        console.error("NO se puede")
+    }else
+    {this._nombreCurso = nuevoNombre}
+    }
 }
+const programacionBaisa = new cursoo({
+nombreCurso: "Curso gratis de programacion basica"})
+
+const cursoDefinitivoHTMl = new cursoo({
+    nombreCurso: "Definitivo de HTML y CSS",
+})
+
+const cursoPracticoHTML = new cursoo({
+    nombreCurso: "HTML y CSS practico",
+})
+
+
+class RutasApredizaje{
+    constructor({nombreCurso, lista = []}) {
+    this.nombreCurso = nombreCurso
+        this.lista = lista
+    }
+}
+
+const escuelaWeb = new RutasApredizaje({
+    nombreCurso : "Escuela de desarrollo Web",
+    lista : [programacionBaisa, cursoDefinitivoHTMl,cursoPracticoHTML],
+})
+
+const escuelaData = new RutasApredizaje({
+    nombreCurso : "Escuela de DataScience",
+    lista : [programacionBaisa,"Phyton", "Excel basico"],
+})
+
+const escuelaCiber = new RutasApredizaje({
+    nombreCurso : "Escuela de ciberseguridad",
+    lista : [programacionBaisa, "Linux", "Malware"],
+})
 
 //trabajar con clases
 class Student{
@@ -145,7 +192,8 @@ const juan1 = {
     nombre: "Juan DC",
     email: "JuanCasablancas@gmail.com",
     userName: "Juan Matanza",
-    twuiter: "juatiuwter@"
+    twuiter: "juatiuwter@",
+    cursosEnAprrendizaje: [escuelaData, escuelaCiber],
 }
 
 const sergio = {

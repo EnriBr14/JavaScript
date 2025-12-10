@@ -21,7 +21,8 @@ async function usoDeFetch(){
 }
 
 */
-
+//------------------------------
+/*
 async function usoDeFetch(){
     console.log("UsoDeFetchhhh");
         let respuesta = await fetch("https://rickandmortyapi.com/api/character")
@@ -30,3 +31,8 @@ async function usoDeFetch(){
 }
 
 usoDeFetch()
+*/
+async function fetchUses(){
+    let res = await fetch("https://rickandmortyapi.com/api/character")
+}
+
